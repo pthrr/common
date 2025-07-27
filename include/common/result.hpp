@@ -130,6 +130,7 @@ inline auto unwrap( Result< T > const& res ) -> T
     if( not res ) [[unlikely]] {
         std::abort();
     }
+
     return res.value();
 }
 
@@ -139,6 +140,7 @@ inline auto unwrap( Result< T >&& res ) -> T
     if( not res ) [[unlikely]] {
         std::abort();
     }
+
     return std::move( res.value() );
 }
 
