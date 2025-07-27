@@ -118,7 +118,7 @@ inline constexpr auto ok() -> Status
     return {};
 }
 
-inline constexpr auto err( str msg, Error::ErrorType typ = Error::ErrorType::GENERIC_ERROR )
+inline constexpr auto err( str msg = "", Error::ErrorType typ = Error::ErrorType::GENERIC_ERROR )
     -> std::unexpected< Error >
 {
     return std::unexpected< Error >( Error( msg, typ ) );
